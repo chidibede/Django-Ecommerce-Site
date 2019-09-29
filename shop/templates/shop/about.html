@@ -1,0 +1,27 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="jombotron">
+  <div class="row">
+    <div class="col-md-6 p-4 mx-auto">
+        <h2>Our CaraColas Mission</h2>
+        <p class="text-lg">We bring goods to your doorstep at affordable rates. We do not sell only goods, we also sell comfort. Those that are too busy to go about shopping will have their work cut out for them at a reduced price</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mx-auto" id="about-image-container">
+    <img src="{% static 'shop/img/model2.png' %}" alt="" width="350" height="450" id="about-image">
+  </div>
+
+  <div class="col-md-5" id="about-container">
+      <h3>Caracolas online shop</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In ducimus, a odit velit magni nam. Id, quam consectetur laboriosam exercitationem eius praesentium dicta adipisci perferendis optio delectus qui eos quasi?
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. In ducimus, a odit velit magni nam. Id, quam consectetur laboriosam exercitationem eius praesentium dicta adipisci perferendis optio delectus qui eos quasi?
+      </p>
+  </div>
+</div>
+
+{% endblock %}

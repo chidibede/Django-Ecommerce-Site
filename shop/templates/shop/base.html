@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Caracolas | Online shop</title>
+        <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'shop/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'shop/styles.css' %}">
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-dark sticky-top" id="my-nav">
+
+                <a href="{% url 'home' %}" class="navbar-brand"><h1 class="title">CARACOLAS</h1></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu"><span class="navbar-toggler-icon"></span></button>
+
+
+                <div class=" navbar-collapse collapse" id="navbar-menu">
+
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mr-2"><a href="{% url 'home' %}" class="nav-link text-light">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-light" data-toggle="dropdown" data-target="mydropdown">Products<span class="caret"></span></a>
+
+                            <div class="dropdown-menu" aria-labelledby="mydropdown">
+                                <a href="#" class="dropdown-item">All Products</a>
+                                <a href="#" class="dropdown-item">Smart Watches</a>
+                                <a href="#" class="dropdown-item">Adult Products</a>
+                                <a href="#" class="dropdown-item">Essential oils</a>
+                            </div>
+                        </li>
+                   
+                        <li class="nav-item mr-2"><a href="{% url 'about' %}" class="nav-link text-light">About us</a></li>
+                        <li class="nav-item mr-2"><a href="{% url 'contact' %}" class="nav-link text-light">Contact us</a></li>
+                    </ul>
+
+                    <form class="form-inline mr-2">
+                        <input type="search" placeholder="search" aria-label="Search" class="form-control-sm mr-sm-2">
+                        <button class="btn btn-sm btn-light my-sm-0 ml-1" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                   <a class="btn btn-dark btn-sm mt-1" href="{% url 'checkout' %}"><i class="fas fa-shopping-cart"></i></a>
+                </nav>
+        </div>
+
+
+        <!-- Image slider -->
+    <div class="container-fluid">
+        {% block content %}
+            <!-- Dynamically render elements here in all pages -->
+        {% endblock %}
+    </div>
+
+    <div class="container-fluid mt-3" id="footer">
+        <footer>
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>CaraColas Online Store</h4>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Copyright &copy;2019 All rights reserved | This website is a product of CaraColas online store</p>
+                </div>
+
+                <div class="col-md-3 social text-center">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+        <script src="{% static 'shop/js/jquery.min.js' %}"></script>
+        <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'shop/js/all.min.js' %}"></script>
+    </body>
+</html>

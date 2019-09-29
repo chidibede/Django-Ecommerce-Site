@@ -1,0 +1,85 @@
+{% extends 'shop/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-md-7 checkout-form mt-4 ml-4 mr-4">
+      <h1>Delivery Address</h1>
+      <form action="" method="POST">{% csrf_token %}
+        <fieldset>
+          <legend>Please fill in your details</legend>
+            <div>
+              {{ form|crispy}}
+            </div>
+                  
+          
+            <div class="form-group">
+                <button class="btn btn-outline-dark btn-lg form-control-lg" type="submit">Place an Order</button>
+            </div>
+        </fieldset>
+    
+      </form>
+  </div>
+
+
+
+  <div class="col-md-4 final-order mt-4 mr-4 ml-4">
+     <h2>Your order</h2>
+     <h5 class="mt-2 mb-4">Order details</h5>
+     <div class="row mt-4">
+       <div class="col-md-6">
+          <p class="ml-4"><u>Products</u></p>
+       </div>
+
+       <div class="col-md-6">
+          <p><u>Total</u></p>
+       </div>
+     </div>
+    
+
+     <div class="row">
+        <div class="col-md-6">
+           <p class="ml-4">Phone Watch</p>
+        </div>
+ 
+        <div class="col-md-6">
+           <p>$750</p>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+             <p class="ml-4">Bluetooth Watch</p>
+          </div>
+   
+          <div class="col-md-6">
+             <p>$300</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+             <p class="ml-4">Smart Watch</p>
+          </div>
+   
+          <div class="col-md-6">
+             <p>$300</p>
+          </div>
+      </div>
+
+      <hr>
+      <div class="row">
+          <div class="col-md-6">
+             <p class="ml-4">Total:</p>
+          </div>
+   
+          <div class="col-md-6">
+             <p>$1300</p>
+          </div>
+      </div>
+
+  </div>
+</div>
+  
+{% endblock %}

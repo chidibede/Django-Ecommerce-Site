@@ -1,0 +1,154 @@
+body{
+  background-color: #e2e8f5a2;
+}
+
+#my-nav{
+    background-image: url("navbar7.jpg");
+    font-size: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.title{
+    font-size: 1.2rem;;
+}
+
+#my-nav a:hover{
+    color:YellowGreen;
+}
+
+.carousel-item img{
+  height:32em;
+  width:100%
+
+}
+
+
+.welcome{
+    font-weight: bolder;
+    color: white;
+}
+
+
+#welcome-body{
+    font-weight: bolder;
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+.product-card {
+    margin-top: 2rem;
+    height: 23em;
+    background-color:white;
+}
+
+.price{
+    font-size: 1.2em;
+}
+
+.categories{
+    margin-top: 2rem;
+    background-color:rgba(219, 214, 166, 0.185);
+}
+
+.text-delete{
+    text-decoration-line: line-through;
+}
+
+
+.view-details{
+    color:white;
+}
+
+
+.view-details:hover{
+    color: black;
+    background-color: transparent;  
+}
+
+.checkout-form{
+    border: 1px solid black;
+    padding: 2em;
+}
+
+.final-order{
+    background-color: #f2f4f8;
+    padding: 2em;
+}
+
+.final-order span{
+    margin-left:3rem;
+}
+
+.jombotron {
+    background-image: url("about.jpg");
+    width: 100%;
+    height: 27rem;
+    color: black;
+    font-weight: bolder;
+}
+
+
+.social a{
+    font-size:1.2em;
+    padding-right:1.2em;
+    color:white;
+  }
+  
+
+.social a:hover{
+    color:YellowGreen;
+}
+
+#footer{
+    background-image: url("navbar7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 1.2em;
+  }
+
+.subscribe{
+      padding-left:3em;
+      padding-right: 3em;
+      margin-top: 1.3em;
+  }
+
+
+#about-image{
+      padding: 1.2em;
+  }
+
+#about-image-container{
+   margin: 1.1em;
+}
+
+#about-container{
+    margin-top: 3em;
+    margin-right: 3em;
+ }
+
+ .contact{
+     border: 1px solid black;
+ }
+
+
+ #subscribe{
+    color:white;
+    background-color: rgba(0, 0, 0, 0.877);
+}
+
+
+#subscribe:hover{
+    color: black;
+    background-color: transparent; 
+    border: 1px solid black; 
+}
+
+
+.product-details{
+    background-color: white;
+    
+}

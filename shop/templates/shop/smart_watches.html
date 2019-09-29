@@ -1,0 +1,48 @@
+{% extends 'shop/base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <!-- my product cards -->
+  <div class="row">
+    <div class="col-lg-3 categories">
+      <h3>Product Categories</h3>
+      <ul class="list-unstyled">
+        <li class="list-group-item"><a href="{% url 'home' %}">All Categories</a></li>
+        <li class="list-group-item"><a href="{% url 'smart-watches' %}">Smart Watches</a></li>
+        <li class="list-group-item"><a href="{% url 'essential-oils' %}">Essential Oils</a></li>
+        <li class="list-group-item"><a href="{% url 'adult-products' %}">Adult Products</a></li>
+      </ul>
+    </div>
+
+
+<!-- Products List Display-->
+    <div class="col-lg-9">
+      <!-- Smart Watches -->
+        <div class="row">
+            {% for smart_watch in smart_watches %}
+
+              <div class="col-lg-4">
+                <div class="card product-card">
+                  <img src="{{ smart_watch.image.url}}" height="160" width="160"  class="mx-auto mt-3">
+                  <div class="card-body">
+                    <h2 class="card-title">{{ smart_watch.name }}</h2>     
+                    <p class="card-text price">
+                      <span>₦</span>{{ smart_watch.sales_price }}
+                      <span class="text-delete text-muted ml-4">
+                          <span>₦</span>{{smart_watch.original_price}}
+                      </span>
+                    </p>
+                    <a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1">Add to Cart</a><span><a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1 btn-dark  view-details mt-1">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+          {% endfor %}
+        </div>
+
+  </div>
+</div>
+{% endblock %}

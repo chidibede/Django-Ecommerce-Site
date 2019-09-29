@@ -1,0 +1,33 @@
+{% extends 'shop/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <!-- my product cards -->
+  <div class="row">
+    <div class="col-lg-5 m-2 product-details">
+      <h3>{{object.name}}</h3>
+      <img src="{{ object.image.url}}" height="450" width="450"  class="mx-auto mt-3">
+    </div>
+
+
+<!-- Products List Display-->
+    <div class="col-lg-6 m-2 product-details">
+      <!-- Smart Watches -->
+                  <div>
+                    <h2>{{ object.name }}</h2>     
+                    <p class="price">
+                      <span>₦</span>{{ object.sales_price }}
+                      <span class="text-delete text-muted ml-4">
+                          <span>₦</span>{{object.original_price}}
+                      </span>
+                    </p>
+                    <small>{{ object.description }}</small>
+                    <br>
+                    <a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1 mb-2">Add to Cart</a>
+                  </div>
+
+   </div>
+</div>
+{% endblock %}

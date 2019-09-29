@@ -1,0 +1,211 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="carousel slide" data-ride="carousel" id="myslides">
+  <ul class="carousel-indicators">
+    <li data-target="#myslides" data-slide-to="0" class="active"></li>
+    <li data-target="#myslides" data-slide-to="1"></li>
+    <li data-target="#myslides" data-slide-to="2"></li>
+    <li data-target="#myslides" data-slide-to="3"></li>
+    <li data-target="#myslides" data-slide-to="4"></li>
+    <li data-target="#myslides" data-slide-to="5"></li>
+    <li data-target="#myslides" data-slide-to="6"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'shop/img/model1.jpg' %}">
+      <div class="row">
+          <div class="col-lg-5">
+              <div class="carousel-caption carousel-welcome">
+                <h3 class="welcome">A NEW ONLINE SHOPPING EXPERIENCE</h3>
+                <p id="welcome-body">We do not only sell products, we also sell comfort, all products delivered to your doorstep, just relax and enjoy our service to you
+                </p>
+                <a href="#" class="btn btn-outline-dark btn-lg bg-light pr-4 pl-4">Shop with Us</a>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product2.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark btn-lg bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product3.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark btn-lg bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product4.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark btn-lg bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product5.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark  bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product8.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark btn-lg bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="{% static 'shop/img/product7.jpg' %}">
+      <div class="carousel-caption">
+        <!-- <h3 class="display-2">A NEW ONLINE EXPERIENCE</h3>
+        <h3>We do not only sell products, we also sell comfort, all products delivered to your doorstep.
+            Let us do all the heavy lifting for you, just relax and enjoy our service to you
+        </h3> -->
+        <a href="#" class="btn btn-outline-dark  bg-light pr-4 pl-4">Shop with Us</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="container">
+    <!-- my product cards -->
+  <div class="row">
+    <div class="col-lg-2 categories">
+      <h3>Product Categories</h3>
+      <ul class="list-unstyled">
+        <li class="list-group-item"><a href="{% url 'home' %}">All Categories</a></li>
+        <li class="list-group-item"><a href="{% url 'smart-watches' %}">Smart Watches</a></li>
+        <li class="list-group-item"><a href="{% url 'essential-oils' %}">Essential Oils</a></li>
+        <li class="list-group-item"><a href="{% url 'adult-products' %}">Adult Products</a></li>
+      </ul>
+    </div>
+
+
+<!-- Products List Display-->
+    <div class="col-lg-10">
+      <!-- Smart Watches -->
+        <div class="row">
+            {% for smart_watch in smart_watches %}
+
+              <div class="col-lg-4">
+                <div class="card product-card">
+                  <img src="{{ smart_watch.image.url}}" height="160" width="160"  class="mx-auto mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ smart_watch.name }}</h3>     
+                    <p class="card-text price">
+                      <span>₦</span>{{ smart_watch.sales_price }}
+                      <span class="text-delete text-muted ml-4">
+                          <span>₦</span>{{smart_watch.original_price}}
+                      </span>
+                    </p>
+                    <a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1">Add to Cart</a><span><a href="{% url 'smart-watch-details' smart_watch.slug %}" class="btn btn-outline-dark btn-sm mr-2 mt-1 btn-dark  view-details mt-1">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+          {% endfor %}
+        </div>
+
+
+        <!-- Essential Oils -->
+        <div class="row">
+            {% for essential_oil in essential_oils %}
+
+              <div class="col-lg-4">
+                <div class="card product-card">
+                  <img src="{{ essential_oil.image.url}}" height="160" width="160"  class="mx-auto mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ essential_oil.name }}</h3>     
+                    <p class="card-text price">
+                      <span>₦</span>{{ essential_oil.sales_price }}
+                      <span class="text-delete text-muted ml-4">
+                          <span>₦</span>{{essential_oil.original_price}}
+                      </span>
+                    </p>
+                    <a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1">Add to Cart</a><span><a href="{% url 'essential-oil-details' essential_oil.slug %}" class="btn btn-outline-dark btn-sm mr-2 mt-1 btn-dark  view-details mt-1">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+          {% endfor %}
+        </div>
+
+        <!-- Adult Products -->
+        <div class="row">
+            {% for adult_product in adult_products %}
+
+              <div class="col-lg-4">
+                <div class="card product-card">
+                  <img src="{{ adult_product.image.url}}" height="160" width="160"  class="mx-auto mt-3">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ adult_product.name }}</h3>     
+                    <p class="card-text price">
+                      <span>₦</span>{{ adult_product.sales_price }}
+                      <span class="text-delete text-muted ml-4">
+                          <span>₦</span>{{adult_product.original_price}}
+                      </span>
+                    </p>
+                    <a href="#" class="btn btn-outline-dark btn-sm mr-2 mt-1">Add to Cart</a><span><a href="{% url 'adult-product-details' adult_product.slug %}" class="btn btn-outline-dark btn-sm mr-2 mt-1 btn-dark  view-details mt-1">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+          {% endfor %}
+        </div>
+
+  </div>
+  
+
+  <div class="container mx-auto pt-4 mt-1">
+      <form action="POST" class="form-group">{% csrf_token %}
+          <fieldset>
+            <legend>
+              <h3 class="text-center">Subscribe to our Email</h3>
+              <small class="text-muted">Please subscribe to our email, we would love to connect with you and you will be the first to know about our latest products and discounts. we will also send you great offers we will be giving out to our esteemed customers</small>
+            </legend>
+    
+            <input type="email" class="form-control" placeholder="Please enter your email">
+          </fieldset>
+          <button class="btn btn-lg subscribe form-control" type="submit" id="subscribe">Subscribe</button>
+        </form>
+  </div>
+    
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}
